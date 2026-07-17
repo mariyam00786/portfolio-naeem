@@ -17,7 +17,7 @@ export default function Frames() {
           <FadeIn delay={0.1 + (idx * 0.05)} key={id} className="break-inside-avoid mb-[12px]">
             <div className="w-full h-full">
               <img 
-                src={`/src/assets/gallery_${id}.jpg`} 
+                src={`/assets/gallery_${id}.jpg`} 
                 alt={`Frame ${id}`}
                 className="block w-full h-auto rounded-[6px] box-border"
                 onError={(e) => { e.target.src = `https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800&auto=format&fit=crop&sig=${id}` }}

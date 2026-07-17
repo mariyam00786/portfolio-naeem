@@ -2,21 +2,21 @@ import FadeIn from '../components/FadeIn';
 
 export default function BTS() {
   const images = [
-    { src: '/src/assets/bts_01.jpg', id: 'img1' },
-    { src: '/src/assets/bts_02.jpg', id: 'img2' },
-    { src: '/src/assets/bts_03.jpg', id: 'img3' },
-    { src: '/src/assets/bts_04.jpg', id: 'img4' },
-    { src: '/src/assets/bts_05.jpg', id: 'img5' },
-    { src: '/src/assets/bts_06.jpg', id: 'img6' },
-    { src: '/src/assets/bts_07.jpg', id: 'img7' },
-    { src: '/src/assets/bts_08.jpg', id: 'img8' },
+    { src: '/assets/bts_01.jpg', id: 'img1' },
+    { src: '/assets/bts_02.jpg', id: 'img2' },
+    { src: '/assets/bts_03.jpg', id: 'img3' },
+    { src: '/assets/bts_04.jpg', id: 'img4' },
+    { src: '/assets/bts_05.jpg', id: 'img5' },
+    { src: '/assets/bts_06.jpg', id: 'img6' },
+    { src: '/assets/bts_07.jpg', id: 'img7' },
+    { src: '/assets/bts_08.jpg', id: 'img8' },
   ];
 
   const videos = [
-    { src: '/src/assets/bts_vid_1.mp4', id: 'vid1' },
-    { src: '/src/assets/bts_vid_2.mp4', id: 'vid2' },
-    { src: '/src/assets/bts_vid_3.mp4', id: 'vid3' },
-    { src: '/src/assets/bts_vid_4.mp4', id: 'vid4' },
+    { src: '/assets/bts_vid_1.mp4', id: 'vid1' },
+    { src: '/assets/bts_vid_2.mp4', id: 'vid2' },
+    { src: '/assets/bts_vid_3.mp4', id: 'vid3' },
+    { src: '/assets/bts_vid_4.mp4', id: 'vid4' },
   ];
 
   return (

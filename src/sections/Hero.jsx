@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Static Background Image */}
       <div className="absolute inset-0 w-full h-full z-0 bg-black">
         <img 
-          src="/src/assets/hero_bg.jpg" 
+          src="/assets/hero_bg.jpg" 
           alt="Hero background"
           className="w-full h-full object-cover"
           onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1600&auto=format&fit=crop' }}

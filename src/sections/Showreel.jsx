@@ -22,7 +22,7 @@ export default function Showreel() {
             onClick={() => setIsPlaying(true)}
           >
             <img 
-              src="/src/assets/showreel_thumb.jpg" 
+              src="/assets/showreel_thumb.jpg" 
               alt="Showreel thumbnail" 
               className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.01]"
               onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=1000&auto=format&fit=crop' }}
@@ -53,7 +53,7 @@ export default function Showreel() {
             </button>
             <div className="w-full max-w-5xl aspect-video bg-black relative rounded-lg overflow-hidden shadow-2xl">
               <video 
-                src="/src/assets/showreel.mp4" 
+                src="/assets/showreel.mp4" 
                 className="w-full h-full"
                 controls
                 autoPlay

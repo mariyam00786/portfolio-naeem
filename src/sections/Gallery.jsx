@@ -7,7 +7,7 @@ export default function Gallery() {
 
   const images = Array.from({ length: 8 }, (_, i) => ({
     id: i + 1,
-    src: `/src/assets/gallery_${i + 1}.jpg`,
+    src: `/assets/gallery_${i + 1}.jpg`,
     fallback: `https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1000&auto=format&fit=crop&sig=${i}`
   }));
 

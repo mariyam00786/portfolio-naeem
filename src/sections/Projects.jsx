@@ -28,7 +28,7 @@ export default function Projects() {
               className="group relative aspect-[1920/800] rounded-[10px] overflow-hidden border border-borderDark bg-[#0a0a0a] cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:border-borderHover hover:brightness-105"
             >
               <video 
-                src={`/src/assets/work_${String(idx + 1).padStart(2, '0')}.mp4`} 
+                src={`/assets/work_${String(idx + 1).padStart(2, '0')}.mp4`} 
                 autoPlay
                 loop
                 muted

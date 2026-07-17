@@ -31,7 +31,7 @@ export default function About() {
             title="Click to toggle color"
           >
             <img 
-              src="/src/assets/about.jpg" 
+              src="/assets/about.jpg" 
               alt="Naeem"
               onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1606902965551-dce093cda6e7?q=80&w=800&auto=format&fit=crop' }}
               className={`w-full h-full object-cover transition-all duration-[600ms] ease-out ${isColor ? 'grayscale-0 brightness-100' : 'grayscale brightness-50'}`}
