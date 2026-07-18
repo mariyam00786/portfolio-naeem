@@ -16,10 +16,13 @@ export default function About() {
         <FadeIn delay={0.2} direction="right" className="order-2 md:order-1">
           <div className="space-y-5 text-[1rem] text-textSecondary font-normal leading-[1.85]">
             <p>
-              I'm a cinematographer with 4+ years of experience shooting commercials and brand campaigns across Kerala. My work sits at the intersection of lighting, camera movement, and visual storytelling, making sure ideas translate smoothly from set to screen.
+              I'm a cinematographer, art director, and food stylist with 4+ years of experience shooting commercials and brand campaigns across Kerala. My work moves across three disciplines — behind the camera, on the set, and at the table — because a strong food or product shot depends on all three coming together.
             </p>
             <p>
-              I focus on keeping the process simple, organized, and efficient, so the work speaks for itself.
+              As a cinematographer, I focus on lighting, camera movement, and visual storytelling that gives a shoot its mood and rhythm. As an art director, I shape the space a shoot lives in — set design, props, and color palette — so every frame feels considered. As a food stylist, I work closely with the food or product itself, thinking about texture, arrangement, and freshness, so it looks as good on screen as it does on the table.
+            </p>
+            <p>
+              I like keeping the process simple, organized, and collaborative, so ideas move smoothly from concept to final delivery.
             </p>
           </div>
         </FadeIn>

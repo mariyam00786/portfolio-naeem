@@ -1,7 +1,9 @@
+import FadeIn from '../components/FadeIn';
+
 const services = [
   {
     title: "Cinematography",
-    desc: "Camera operation, lighting design, and visual storytelling for commercials and brand films.",
+    desc: "Camera operation, lighting design, and visual storytelling for commercials, brand films, and food/product campaigns. Focused on building mood and depth through light and framing.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="6" width="14" height="12" rx="2"></rect>
@@ -12,35 +14,31 @@ const services = [
     )
   },
   {
-    title: "On-set technical direction",
-    desc: "Shot planning, camera department coordination, and technical execution of the director's vision.",
+    title: "Art Direction",
+    desc: "Set design, prop styling, and visual concept development — building the world a shoot lives in, from color palette to spatial layout, so every frame feels intentional.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        <path d="M12 20h9"></path>
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
       </svg>
     )
   },
   {
-    title: "Color & look development",
-    desc: "Collaborating on grading, LUTs, and visual tone matched to brand identity.",
+    title: "Food Styling",
+    desc: "Styling food and product shots for the camera — arrangement, texture, freshness, and presentation, tailored to how a dish or product needs to read on screen versus in real life.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="4" y1="21" x2="4" y2="14"></line>
-        <line x1="4" y1="10" x2="4" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="12"></line>
-        <line x1="12" y1="8" x2="12" y2="3"></line>
-        <line x1="20" y1="21" x2="20" y2="16"></line>
-        <line x1="20" y1="12" x2="20" y2="3"></line>
-        <line x1="1" y1="14" x2="7" y2="14"></line>
-        <line x1="9" y1="8" x2="15" y2="8"></line>
-        <line x1="17" y1="16" x2="23" y2="16"></line>
+        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+        <line x1="6" y1="1" x2="6" y2="4"></line>
+        <line x1="10" y1="1" x2="10" y2="4"></line>
+        <line x1="14" y1="1" x2="14" y2="4"></line>
       </svg>
     )
   },
   {
-    title: "Creative collaboration",
-    desc: "Working closely with directors and agencies for cohesive project outcomes.",
+    title: "On-Set Coordination",
+    desc: "Bridging the creative and technical sides of a shoot — working closely with directors, chefs, and brand teams to keep vision and execution aligned from prep to final frame.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="6" cy="6" r="3"></circle>
@@ -53,15 +51,13 @@ const services = [
   }
 ];
 
-import FadeIn from '../components/FadeIn';
-
 export default function Services() {
   return (
     <section id="services" className="py-[100px] px-6 md:px-12">
       <FadeIn delay={0.1}>
         <div className="text-center mb-14">
           <h2 className="text-[clamp(1.4rem,2.8vw,1.85rem)] font-extrabold uppercase tracking-wide mb-2 text-textPrimary">HOW I CAN HELP</h2>
-          <p className="text-[0.95rem] text-textSecondary font-normal">Visuals, lighting, and on-set execution.</p>
+          <p className="text-[0.95rem] text-textSecondary font-normal">Cinematography, art direction, and food styling — all three in one.</p>
         </div>
       </FadeIn>
 
