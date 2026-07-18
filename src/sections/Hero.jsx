@@ -27,7 +27,7 @@ export default function Hero() {
         
         <FadeIn delay={0.3}>
           <p className="text-[clamp(0.75rem,1.3vw,0.95rem)] font-normal tracking-[0.18em] uppercase text-[#a8a8a8] mb-8">
-            CINEMATOGRAPHER / VIDEO EDITOR / DIRECTOR
+            CINEMATOGRAPHER / ART DIRECTOR / FOOD STYLIST
           </p>
         </FadeIn>
         
