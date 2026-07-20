@@ -7,15 +7,18 @@ export default function ArtDirection() {
   // Only valid JPEG images — art_*.jpg files are HEIC format and cannot display in browsers.
   // Replace the art images with proper JPEGs exported from your phone/editor, named art_1.jpg through art_7.jpg
   const images = [
-    { src: '/assets/gallery_1.jpg',  alt: 'Frame 1', caption: 'SET DESIGN' },
-    { src: '/assets/gallery_2.jpg',  alt: 'Frame 2', caption: 'PROP STYLING' },
-    { src: '/assets/gallery_3.jpg',  alt: 'Frame 3', caption: 'VISUAL CONCEPT' },
-    { src: '/assets/gallery_4.jpg',  alt: 'Frame 4', caption: 'MOOD & TONE' },
-    { src: '/assets/gallery_5.jpg',  alt: 'Frame 5', caption: 'COLOR PALETTE' },
-    { src: '/assets/gallery_6.jpg',  alt: 'Frame 6', caption: 'EXECUTION' },
-    { src: '/assets/gallery_7.jpg',  alt: 'Frame 7', caption: 'CREATIVE VISION' },
-    { src: '/assets/gallery_8.jpeg', alt: 'Frame 8', caption: 'STYLING' },
-    { src: '/assets/gallery_9.jpeg', alt: 'Frame 9', caption: 'FINAL LOOK' },
+    { src: '/assets/gallery_1.jpg',   alt: 'Frame 1',  caption: 'SET DESIGN' },
+    { src: '/assets/gallery_2.jpg',   alt: 'Frame 2',  caption: 'PROP STYLING' },
+    { src: '/assets/gallery_3.jpg',   alt: 'Frame 3',  caption: 'VISUAL CONCEPT' },
+    { src: '/assets/gallery_4.jpg',   alt: 'Frame 4',  caption: 'MOOD & TONE' },
+    { src: '/assets/gallery_5.jpg',   alt: 'Frame 5',  caption: 'COLOR PALETTE' },
+    { src: '/assets/gallery_6.jpg',   alt: 'Frame 6',  caption: 'EXECUTION' },
+    { src: '/assets/gallery_7.jpg',   alt: 'Frame 7',  caption: 'CREATIVE VISION' },
+    { src: '/assets/gallery_8.jpeg',  alt: 'Frame 8',  caption: 'STYLING' },
+    { src: '/assets/gallery_9.jpeg',  alt: 'Frame 9',  caption: 'FINAL LOOK' },
+    { src: '/assets/gallery_10.jpeg', alt: 'Frame 10', caption: 'ART DIRECTION' },
+    { src: '/assets/gallery_11.jpeg', alt: 'Frame 11', caption: 'COMPOSITION' },
+    { src: '/assets/gallery_12.jpeg', alt: 'Frame 12', caption: 'PRODUCTION' },
   ];
 
   // Drag-to-scroll logic
