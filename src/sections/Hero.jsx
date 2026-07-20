@@ -9,7 +9,7 @@ export default function Hero() {
         <img 
           src="/assets/hero_bg.jpg" 
           alt="Hero background"
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover"
           onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1600&auto=format&fit=crop' }}
         />
       </div>
