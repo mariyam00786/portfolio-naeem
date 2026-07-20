@@ -1,7 +1,7 @@
 import FadeIn from '../components/FadeIn';
 
 export default function Contact() {
-  const email = "hello@naeem.com"; // Placeholder
+  const email = "naeemva777@gmail.com";
   const phone = "+91 755 900 8507"; // Placeholder
   const instagramUrl = "#";
   const vimeoUrl = "#";
