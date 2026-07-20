@@ -18,7 +18,6 @@ export default function ArtDirection() {
     { src: '/assets/gallery_9.jpeg',  alt: 'Frame 9',  caption: 'FINAL LOOK' },
     { src: '/assets/gallery_10.jpeg', alt: 'Frame 10', caption: 'ART DIRECTION' },
     { src: '/assets/gallery_11.jpeg', alt: 'Frame 11', caption: 'COMPOSITION' },
-    { src: '/assets/gallery_12.jpeg', alt: 'Frame 12', caption: 'PRODUCTION' },
   ];
 
   // Drag-to-scroll logic
