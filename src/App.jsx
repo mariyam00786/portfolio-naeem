@@ -4,8 +4,7 @@ import Showreel from './sections/Showreel';
 import Services from './sections/Services';
 import Projects from './sections/Projects';
 import Brands from './sections/Brands';
-import Frames from './sections/Frames';
-import Art from './sections/Art';
+import ArtDirection from './sections/ArtDirection';
 import BTS from './sections/BTS';
 import About from './sections/About';
 import Contact from './sections/Contact';
@@ -20,8 +19,7 @@ function App() {
         <Services />
         <Projects />
         <Brands />
-        <Frames />
-        <Art />
+        <ArtDirection />
         <BTS />
         <About />
       </main>
