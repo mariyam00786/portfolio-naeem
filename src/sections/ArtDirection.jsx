@@ -7,15 +7,15 @@ export default function ArtDirection() {
   // Only valid JPEG images — art_*.jpg files are HEIC format and cannot display in browsers.
   // Replace the art images with proper JPEGs exported from your phone/editor, named art_1.jpg through art_7.jpg
   const images = [
-    { src: '/assets/gallery_1.jpg',  alt: 'Frame 1' },
-    { src: '/assets/gallery_2.jpg',  alt: 'Frame 2' },
-    { src: '/assets/gallery_3.jpg',  alt: 'Frame 3' },
-    { src: '/assets/gallery_4.jpg',  alt: 'Frame 4' },
-    { src: '/assets/gallery_5.jpg',  alt: 'Frame 5' },
-    { src: '/assets/gallery_6.jpg',  alt: 'Frame 6' },
-    { src: '/assets/gallery_7.jpg',  alt: 'Frame 7' },
-    { src: '/assets/gallery_8.jpeg', alt: 'Frame 8' },
-    { src: '/assets/gallery_9.jpeg', alt: 'Frame 9' },
+    { src: '/assets/gallery_1.jpg',  alt: 'Frame 1', caption: 'SET DESIGN' },
+    { src: '/assets/gallery_2.jpg',  alt: 'Frame 2', caption: 'PROP STYLING' },
+    { src: '/assets/gallery_3.jpg',  alt: 'Frame 3', caption: 'VISUAL CONCEPT' },
+    { src: '/assets/gallery_4.jpg',  alt: 'Frame 4', caption: 'MOOD & TONE' },
+    { src: '/assets/gallery_5.jpg',  alt: 'Frame 5', caption: 'COLOR PALETTE' },
+    { src: '/assets/gallery_6.jpg',  alt: 'Frame 6', caption: 'EXECUTION' },
+    { src: '/assets/gallery_7.jpg',  alt: 'Frame 7', caption: 'CREATIVE VISION' },
+    { src: '/assets/gallery_8.jpeg', alt: 'Frame 8', caption: 'STYLING' },
+    { src: '/assets/gallery_9.jpeg', alt: 'Frame 9', caption: 'FINAL LOOK' },
   ];
 
   // Drag-to-scroll logic
@@ -90,32 +90,56 @@ export default function ArtDirection() {
               style={{
                 flexShrink: 0,
                 scrollSnapAlign: 'start',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '12px',
+                width: 'auto',
+              }}
+              className="filmstrip-item"
+            >
+              {/* Image */}
+              <div style={{
                 height: 'clamp(260px, 30vw, 380px)',
                 width: 'auto',
                 overflow: 'hidden',
                 borderRadius: '8px',
                 border: '1px solid #1f1f1f',
-              }}
-              className="filmstrip-item"
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                draggable={false}
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = `https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800&auto=format&fit=crop&sig=${idx}`;
-                }}
-                style={{
-                  height: '100%',
-                  width: 'auto',
-                  objectFit: 'cover',
-                  display: 'block',
-                  transition: 'transform 0.4s ease',
-                  userSelect: 'none',
-                }}
-                className="filmstrip-img"
-              />
+                flexShrink: 0,
+              }}>
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  draggable={false}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = `https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800&auto=format&fit=crop&sig=${idx}`;
+                  }}
+                  style={{
+                    height: '100%',
+                    width: 'auto',
+                    objectFit: 'cover',
+                    display: 'block',
+                    transition: 'transform 0.4s ease',
+                    userSelect: 'none',
+                  }}
+                  className="filmstrip-img"
+                />
+              </div>
+
+              {/* Caption */}
+              <span style={{
+                fontSize: '10px',
+                fontWeight: 600,
+                letterSpacing: '3px',
+                textTransform: 'uppercase',
+                color: '#555',
+                textAlign: 'center',
+                whiteSpace: 'nowrap',
+                display: 'block',
+              }}>
+                {img.caption}
+              </span>
             </div>
           ))}
         </div>
