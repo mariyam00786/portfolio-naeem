@@ -1,12 +1,12 @@
 const projects = [
-  { name: 'Lulu Hypermarket', type: 'Commercial' },
-  { name: 'Gold Winner', type: 'Commercial' },
-  { name: 'Ajmi Foods', type: 'Advertisement' },
-  { name: 'Nellara', type: 'Brand film' },
-  { name: 'Lakshmi Jewellery', type: 'Brand film' },
+  { name: 'Milma', type: 'Commercial' },
+  { name: 'LFA', type: 'Advertisement' },
   { name: 'Muralya', type: 'Commercial' },
-  { name: 'Sweet Karam Coffee', type: 'Commercial' },
-  { name: 'MTR Foods', type: 'Commercial' }
+  { name: 'Regal Jewellery', type: 'Advertisement' },
+  { name: 'Nellara', type: 'Commercial' },
+  { name: 'Regal Jewellery', type: 'Commercial' },
+  { name: 'Kerala Cafe', type: 'Commercial' },
+  { name: 'Deepam Oil', type: 'Commercial' },
 ];
 
 import FadeIn from '../components/FadeIn';
