@@ -4,22 +4,18 @@ import FadeIn from '../components/FadeIn';
 export default function ArtDirection() {
   const scrollRef = useRef(null);
 
-  // Gallery stills + art works combined into one filmstrip
+  // Only valid JPEG images — art_*.jpg files are HEIC format and cannot display in browsers.
+  // Replace the art images with proper JPEGs exported from your phone/editor, named art_1.jpg through art_7.jpg
   const images = [
     { src: '/assets/gallery_1.jpg',  alt: 'Frame 1' },
-    { src: '/assets/art_1.jpg',      alt: 'Art 1' },
     { src: '/assets/gallery_2.jpg',  alt: 'Frame 2' },
-    { src: '/assets/art_2.jpg',      alt: 'Art 2' },
     { src: '/assets/gallery_3.jpg',  alt: 'Frame 3' },
-    { src: '/assets/art_3.jpg',      alt: 'Art 3' },
     { src: '/assets/gallery_4.jpg',  alt: 'Frame 4' },
-    { src: '/assets/art_4.jpg',      alt: 'Art 4' },
     { src: '/assets/gallery_5.jpg',  alt: 'Frame 5' },
-    { src: '/assets/art_5.jpg',      alt: 'Art 5' },
     { src: '/assets/gallery_6.jpg',  alt: 'Frame 6' },
-    { src: '/assets/art_6.jpg',      alt: 'Art 6' },
     { src: '/assets/gallery_7.jpg',  alt: 'Frame 7' },
-    { src: '/assets/art_7.jpg',      alt: 'Art 7' },
+    { src: '/assets/gallery_8.jpeg', alt: 'Frame 8' },
+    { src: '/assets/gallery_9.jpeg', alt: 'Frame 9' },
   ];
 
   // Drag-to-scroll logic
