@@ -38,6 +38,20 @@ export default function Hero() {
             <p>Comfortable moving between creative and technical roles on set.</p>
           </div>
         </FadeIn>
+
+        <FadeIn delay={0.7}>
+          <div className="mt-10 flex gap-10 justify-center items-center backdrop-blur-sm bg-white/5 py-4 px-8 rounded-full border border-white/10">
+            <div className="flex flex-col items-center">
+              <span className="text-xl md:text-2xl font-extrabold text-textPrimary mb-1 tracking-wider">100+</span>
+              <span className="text-[0.65rem] md:text-xs uppercase tracking-[0.2em] text-[#a8a8a8]">Brands</span>
+            </div>
+            <div className="w-[1px] h-10 bg-white/10"></div>
+            <div className="flex flex-col items-center">
+              <span className="text-xl md:text-2xl font-extrabold text-textPrimary mb-1 tracking-wider">100+</span>
+              <span className="text-[0.65rem] md:text-xs uppercase tracking-[0.2em] text-[#a8a8a8]">Projects</span>
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
