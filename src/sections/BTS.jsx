@@ -47,6 +47,13 @@ export default function BTS() {
           ))}
         </div>
 
+        {/* Videos Section Heading */}
+        <FadeIn delay={0.2}>
+          <div className="pt-10 pb-6 text-center">
+            <h3 className="text-lg font-bold tracking-[3px] text-textPrimary uppercase">BTS REELS</h3>
+          </div>
+        </FadeIn>
+
         {/* Videos Grid (Reel Layout) */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {videos.map((item, idx) => (
