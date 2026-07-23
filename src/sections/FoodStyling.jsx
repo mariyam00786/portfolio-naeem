@@ -1,6 +1,11 @@
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
 
 export default function FoodStyling() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const images = [
     { src: '/assets/food_1.jpg', alt: 'Food Styling 1', caption: 'STYLING' },
     { src: '/assets/food_2.jpg', alt: 'Food Styling 2', caption: 'COMPOSITION' },
@@ -9,7 +14,7 @@ export default function FoodStyling() {
   ];
 
   return (
-    <section id="food-styling" className="py-[100px] px-6 md:px-12 bg-black overflow-hidden">
+    <section id="food-styling" className="py-[100px] px-6 md:px-12 bg-black overflow-hidden relative">
 
       <FadeIn delay={0.1}>
         <div className="text-center mb-14">
@@ -28,7 +33,10 @@ export default function FoodStyling() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:h-[650px]">
             
             {/* Left Side: Large Featured Image */}
-            <div className="relative rounded-[12px] overflow-hidden group aspect-[4/5] md:aspect-auto h-full w-full bg-[#111] border border-borderDark cursor-pointer">
+            <div 
+              onClick={() => setSelectedImage(images[0])}
+              className="relative rounded-[12px] overflow-hidden group aspect-[4/5] md:aspect-auto h-full w-full bg-[#111] border border-borderDark cursor-pointer"
+            >
               <img
                 src={images[0].src}
                 alt={images[0].alt}
@@ -47,7 +55,10 @@ export default function FoodStyling() {
                 
                 {/* Top wide image */}
                 {images[1] && (
-                  <div className="col-span-2 relative rounded-[12px] overflow-hidden group aspect-video md:aspect-auto w-full h-full bg-[#111] border border-borderDark cursor-pointer">
+                  <div 
+                    onClick={() => setSelectedImage(images[1])}
+                    className="col-span-2 relative rounded-[12px] overflow-hidden group aspect-video md:aspect-auto w-full h-full bg-[#111] border border-borderDark cursor-pointer"
+                  >
                     <img
                       src={images[1].src}
                       alt={images[1].alt}
@@ -63,7 +74,10 @@ export default function FoodStyling() {
                 
                 {/* Bottom left image */}
                 {images[2] && (
-                  <div className="relative rounded-[12px] overflow-hidden group aspect-square md:aspect-auto w-full h-full bg-[#111] border border-borderDark cursor-pointer">
+                  <div 
+                    onClick={() => setSelectedImage(images[2])}
+                    className="relative rounded-[12px] overflow-hidden group aspect-square md:aspect-auto w-full h-full bg-[#111] border border-borderDark cursor-pointer"
+                  >
                     <img
                       src={images[2].src}
                       alt={images[2].alt}
@@ -79,7 +93,10 @@ export default function FoodStyling() {
                 
                 {/* Bottom right image */}
                 {images[3] && (
-                  <div className="relative rounded-[12px] overflow-hidden group aspect-square md:aspect-auto w-full h-full bg-[#111] border border-borderDark cursor-pointer">
+                  <div 
+                    onClick={() => setSelectedImage(images[3])}
+                    className="relative rounded-[12px] overflow-hidden group aspect-square md:aspect-auto w-full h-full bg-[#111] border border-borderDark cursor-pointer"
+                  >
                     <img
                       src={images[3].src}
                       alt={images[3].alt}
@@ -98,6 +115,51 @@ export default function FoodStyling() {
           </div>
         </FadeIn>
       </div>
+
+      {/* Lightbox Modal with Framer Motion */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+            animate={{ opacity: 1, backdropFilter: 'blur(10px)' }}
+            exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/90 p-4 cursor-zoom-out"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-6 right-6 md:top-10 md:right-10 text-white/50 hover:text-white transition-colors z-50 focus:outline-none"
+            >
+              <X size={36} strokeWidth={1.5} />
+            </button>
+            
+            <motion.img
+              initial={{ scale: 0.8, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", stiffness: 350, damping: 30 }}
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="max-w-full max-h-[80vh] object-contain rounded-[8px] shadow-2xl cursor-default"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image itself
+            />
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ delay: 0.1 }}
+              className="mt-6 text-center"
+            >
+              <span className="text-sm md:text-base font-bold tracking-[5px] text-white uppercase">
+                {selectedImage.caption}
+              </span>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </section>
   );
 }
