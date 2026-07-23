@@ -1,9 +1,6 @@
-import { useRef } from 'react';
 import FadeIn from '../components/FadeIn';
 
 export default function FoodStyling() {
-  const scrollRef = useRef(null);
-
   const images = [
     { src: '/assets/food_1.jpg', alt: 'Food Styling 1', caption: 'STYLING' },
     { src: '/assets/food_2.jpg', alt: 'Food Styling 2', caption: 'COMPOSITION' },
@@ -11,38 +8,11 @@ export default function FoodStyling() {
     { src: '/assets/food_4.jpg', alt: 'Food Styling 4', caption: 'PRESENTATION' },
   ];
 
-  // Drag-to-scroll logic
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
-
-  const onMouseDown = (e) => {
-    isDragging.current = true;
-    startX.current = e.pageX - scrollRef.current.offsetLeft;
-    scrollLeft.current = scrollRef.current.scrollLeft;
-    scrollRef.current.style.cursor = 'grabbing';
-  };
-  const onMouseLeave = () => {
-    isDragging.current = false;
-    if (scrollRef.current) scrollRef.current.style.cursor = 'grab';
-  };
-  const onMouseUp = () => {
-    isDragging.current = false;
-    if (scrollRef.current) scrollRef.current.style.cursor = 'grab';
-  };
-  const onMouseMove = (e) => {
-    if (!isDragging.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX.current) * 1.5;
-    scrollRef.current.scrollLeft = scrollLeft.current - walk;
-  };
-
   return (
-    <section id="food-styling" className="py-[100px] bg-black overflow-hidden">
+    <section id="food-styling" className="py-[100px] px-6 md:px-12 bg-black overflow-hidden">
 
       <FadeIn delay={0.1}>
-        <div className="text-center mb-14 px-6 md:px-12">
+        <div className="text-center mb-14">
           <span className="text-[0.75rem] font-bold tracking-[5px] text-textSecondary opacity-60 uppercase mb-3 block">STYLING</span>
           <h2 className="text-[clamp(1.4rem,2.8vw,1.85rem)] font-extrabold uppercase tracking-wide mb-2 text-textPrimary">
             FOOD STYLING
@@ -53,97 +23,81 @@ export default function FoodStyling() {
         </div>
       </FadeIn>
 
-      <FadeIn delay={0.2}>
-        {/* Filmstrip */}
-        <div
-          ref={scrollRef}
-          onMouseDown={onMouseDown}
-          onMouseLeave={onMouseLeave}
-          onMouseUp={onMouseUp}
-          onMouseMove={onMouseMove}
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            overflowX: 'auto',
-            overflowY: 'hidden',
-            scrollSnapType: 'x mandatory',
-            gap: '10px',
-            paddingLeft: '24px',
-            paddingRight: '24px',
-            cursor: 'grab',
-            /* hide scrollbar */
-            msOverflowStyle: 'none',
-            scrollbarWidth: 'none',
-          }}
-          className="filmstrip"
-        >
-          {images.map((img, idx) => (
-            <div
-              key={idx}
-              style={{
-                flexShrink: 0,
-                scrollSnapAlign: 'start',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '12px',
-                width: 'auto',
-              }}
-              className="filmstrip-item"
-            >
-              {/* Image */}
-              <div style={{
-                height: 'clamp(260px, 30vw, 380px)',
-                width: 'auto',
-                overflow: 'hidden',
-                borderRadius: '8px',
-                border: '1px solid #1f1f1f',
-                flexShrink: 0,
-              }}>
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  draggable={false}
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = `https://images.unsplash.com/photo-1414235077428-338988692286?q=80&w=800&auto=format&fit=crop&sig=${idx}`;
-                  }}
-                  style={{
-                    height: '100%',
-                    width: 'auto',
-                    objectFit: 'cover',
-                    display: 'block',
-                    transition: 'transform 0.4s ease',
-                    userSelect: 'none',
-                  }}
-                  className="filmstrip-img"
-                />
-              </div>
-
-              {/* Caption */}
-              <span style={{
-                fontSize: '10px',
-                fontWeight: 600,
-                letterSpacing: '3px',
-                textTransform: 'uppercase',
-                color: '#555',
-                textAlign: 'center',
-                whiteSpace: 'nowrap',
-                display: 'block',
-              }}>
-                {img.caption}
+      <div className="max-w-[1400px] mx-auto">
+        <FadeIn delay={0.2}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:h-[650px]">
+            
+            {/* Left Side: Large Featured Image */}
+            <div className="relative rounded-[12px] overflow-hidden group aspect-[4/5] md:aspect-auto h-full w-full bg-[#111] border border-borderDark cursor-pointer">
+              <img
+                src={images[0].src}
+                alt={images[0].alt}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-105"
+                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1414235077428-338988692286?q=80&w=800&auto=format&fit=crop' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span className="absolute bottom-6 left-6 text-sm font-bold tracking-[4px] text-white uppercase drop-shadow-md">
+                {images[0].caption}
               </span>
             </div>
-          ))}
-        </div>
-      </FadeIn>
+            
+            {/* Right Side: 3 Smaller Images in Bento Layout */}
+            {images.length > 1 && (
+              <div className="grid grid-cols-2 grid-rows-2 gap-4 h-full">
+                
+                {/* Top wide image */}
+                {images[1] && (
+                  <div className="col-span-2 relative rounded-[12px] overflow-hidden group aspect-video md:aspect-auto w-full h-full bg-[#111] border border-borderDark cursor-pointer">
+                    <img
+                      src={images[1].src}
+                      alt={images[1].alt}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-105"
+                      onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=800&auto=format&fit=crop' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+                    <span className="absolute bottom-5 left-5 text-xs font-bold tracking-[3px] text-white uppercase drop-shadow-md">
+                      {images[1].caption}
+                    </span>
+                  </div>
+                )}
+                
+                {/* Bottom left image */}
+                {images[2] && (
+                  <div className="relative rounded-[12px] overflow-hidden group aspect-square md:aspect-auto w-full h-full bg-[#111] border border-borderDark cursor-pointer">
+                    <img
+                      src={images[2].src}
+                      alt={images[2].alt}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-105"
+                      onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=600&auto=format&fit=crop' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+                    <span className="absolute bottom-4 left-4 text-[10px] font-bold tracking-[2px] text-white uppercase drop-shadow-md">
+                      {images[2].caption}
+                    </span>
+                  </div>
+                )}
+                
+                {/* Bottom right image */}
+                {images[3] && (
+                  <div className="relative rounded-[12px] overflow-hidden group aspect-square md:aspect-auto w-full h-full bg-[#111] border border-borderDark cursor-pointer">
+                    <img
+                      src={images[3].src}
+                      alt={images[3].alt}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-105"
+                      onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1484723091791-c0e7e53534b4?q=80&w=600&auto=format&fit=crop' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+                    <span className="absolute bottom-4 left-4 text-[10px] font-bold tracking-[2px] text-white uppercase drop-shadow-md">
+                      {images[3].caption}
+                    </span>
+                  </div>
+                )}
 
-      <style>{`
-        .filmstrip::-webkit-scrollbar { display: none; }
-        .filmstrip-item:hover .filmstrip-img {
-          transform: scale(1.03);
-        }
-      `}</style>
+              </div>
+            )}
+          </div>
+        </FadeIn>
+      </div>
     </section>
   );
 }
