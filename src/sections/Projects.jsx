@@ -36,10 +36,10 @@ export default function Projects() {
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
               />
               
-              {/* Cinematic Title Overlay matching niyasabu */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-[0.95rem] font-bold text-textPrimary">{project.name}</h3>
-                <p className="text-[0.75rem] font-normal text-white/60 mt-1 uppercase tracking-wide">{project.type}</p>
+              {/* Cinematic Title Overlay - Always Visible */}
+              <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/95 via-black/40 to-transparent transition-opacity duration-300">
+                <h3 className="text-[0.95rem] font-bold text-textPrimary drop-shadow-md">{project.name}</h3>
+                <p className="text-[0.75rem] font-normal text-white/80 mt-1 uppercase tracking-wide drop-shadow-md">{project.type}</p>
               </div>
             </div>
           </FadeIn>
