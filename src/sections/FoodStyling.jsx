@@ -6,6 +6,9 @@ export default function FoodStyling() {
 
   const images = [
     { src: '/assets/food_1.jpg', alt: 'Food Styling 1', caption: 'STYLING' },
+    { src: '/assets/food_2.jpg', alt: 'Food Styling 2', caption: 'COMPOSITION' },
+    { src: '/assets/food_3.jpg', alt: 'Food Styling 3', caption: 'COLOR PALETTE' },
+    { src: '/assets/food_4.jpg', alt: 'Food Styling 4', caption: 'PRESENTATION' },
   ];
 
   // Drag-to-scroll logic
