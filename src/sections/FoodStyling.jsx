@@ -1,7 +1,7 @@
 import FadeIn from '../components/FadeIn';
 
 export default function FoodStyling() {
-  const images = [1, 2, 3, 4, 5, 6];
+  const images = [1];
 
   return (
     <section id="food-styling" className="py-[100px] px-6 md:px-12 bg-black">
